@@ -1,0 +1,20 @@
+name: Hello
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  powitanie:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Przywitaj sie
+        run: echo "Czesc z GitHub Actions!"
+
+      - name: Informacje o maszynie
+        run: |
+          date
+          uname -a
+          whoami
+          pwd
