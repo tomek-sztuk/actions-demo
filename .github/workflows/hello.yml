@@ -33,3 +33,6 @@ jobs:
       - name: Podsumowanie
         run: |
           echo "### Uruchomil ${{ github.actor }}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Uruchom skrypt
+        run: bash scripts/powitanie.sh
