@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+env:
+  KURS: DevOps
+
 jobs:
   powitanie:
     runs-on: ubuntu-latest
@@ -18,3 +21,15 @@ jobs:
           uname -a
           whoami
           pwd
+
+      - name: Zmienne i konteksty
+        run: |
+          echo "Kurs: $KURS"
+          echo "Uruchomil: ${{ github.actor }}"
+          echo "Galaz: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Zdarzenie: ${{ github.event_name }}"
+
+      - name: Podsumowanie
+        run: |
+          echo "### Uruchomil ${{ github.actor }}" >> "$GITHUB_STEP_SUMMARY"
